@@ -1,0 +1,7 @@
+WHILE
+ident(SQRT)
+MULTIPLICATIVE(*)
+ident(SQRT)
+COMPARE(<=)
+ident(N)
+DO

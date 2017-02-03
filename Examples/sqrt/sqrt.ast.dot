@@ -1,0 +1,63 @@
+digraph tl12Ast {
+  ordering=out;
+  node [shape = box, style = filled, fillcolor="white"];
+  n1 [label="program",shape=box]
+  n2 [label="decl list",shape=box]
+  n1 -> n2
+  n3 [label="decl:'N':int",shape=box]
+  n2 -> n3
+  n5 [label="decl:'SQRT':int",shape=box]
+  n2 -> n5
+  n7 [label="stmt list",shape=box]
+  n1 -> n7
+  n8 [label=":=",shape=box]
+  n7 -> n8
+  n9 [label="N:int",shape=box]
+  n8 -> n9
+  n4 [label="readint:int",shape=box]  
+  n8 -> n4
+  n10 [label=":=",shape=box]
+  n7 -> n10
+  n11 [label="SQRT:int",shape=box]
+  n10 -> n11
+  n12 [label="0:int",shape=box]
+  n10 -> n12
+  n13 [label="while",shape=box]
+  n7 -> n13
+  n14 [label="<=:bool",shape=box]
+  n13 -> n14
+  n15 [label="*:int",shape=box]
+  n14 -> n15
+  n16 [label="SQRT:int",shape=box]
+  n15 -> n16
+  n17 [label="SQRT:int",shape=box]
+  n15 -> n17
+  n18 [label="N:int",shape=box]
+  n14 -> n18
+  n19 [label="stmt list",shape=box]
+  n13 -> n19
+  n20 [label=":=",shape=box]
+  n19 -> n20
+  n21 [label="SQRT:int",shape=box]
+  n20 -> n21
+  n22 [label="+:int",shape=box]
+  n20 -> n22
+  n23 [label="SQRT:int",shape=box]
+  n22 -> n23
+  n24 [label="1:int",shape=box]
+  n22 -> n24
+  n25 [label=":=",shape=box]
+  n7 -> n25
+  n26 [label="SQRT:int",shape=box]
+  n25 -> n26
+  n27 [label="-:int",shape=box]
+  n25 -> n27
+  n28 [label="SQRT:int",shape=box]
+  n27 -> n28
+  n29 [label="1:int",shape=box]
+  n27 -> n29
+  n30 [label="writeint",shape=box]
+  n7 -> n30
+  n31 [label="SQRT:int",shape=box]
+  n30 -> n31
+}
