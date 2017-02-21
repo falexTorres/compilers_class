@@ -1,1 +1,0 @@
-while SQRT * SQRT <= N do

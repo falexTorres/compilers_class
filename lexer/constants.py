@@ -22,3 +22,6 @@ symbols_and_operators_dict = {'(': 'LP', ')': 'RP', ':=': 'ASGN', ';': 'SC', '*'
 			'div': 'MULTIPLICATIVE(div)', 'mod': 'MULTIPLICATIVE(mod)', '+': 'ADDITIVE(+)',
 			'-': 'ADDITIVE(-)', '=': 'COMPARE(=)', '!=': 'COMPARE(!=)', '<': 'COMPARE(<)',
 			'>': 'COMPARE(>)', '<=': 'COMPARE(<=)', '>=': 'COMPARE(>=)'}
+
+# list of keywords and symbols and operators and built-in procedures
+tokens = keywords + symbols_and_operators + built_in

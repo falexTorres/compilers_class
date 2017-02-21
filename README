@@ -1,0 +1,5 @@
+execute these commands from the project's root directory (directory you are reading this from)
+
+install: source bin/build.sh
+execute: bin/exec.sh
+uninstall: bin/remove.sh 

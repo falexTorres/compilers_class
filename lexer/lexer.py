@@ -1,29 +1,34 @@
+import sys
+import os
 from lexer_constants import *
 from lexer_automaton import automaton
 from lexer_functions import *
 from re import fullmatch
 # instantiate automaton
 lexer = automaton('entry')
-# name of source file
-#f_in = 'test.tl'
-#f_in = '../Examples/Simple/simple1.tl'
-#f_in = '../Examples/sqrt/sqrt.tl'
-f_in = '../Examples/type-error1.tl'
+# read command line arguments for file
+if len(sys.argv) <= 1:
+	print("\nplease provide the source file path as a command argument\n")
+	sys.exit()
+f_in = sys.argv[1]
+if f_in[-2:] != 'tl':
+	print("\nthe source file must have a '.tl' extension\n")
+	sys.exit()
+elif not os.path.isfile(f_in):
+	print("\nsource file cannot be found\n")
+	sys.exit()
 # name of output file
-#f_out = 'test.tok'
-#f_out = 'simpl1.tok'
-#f_out = 'sqrt.tok'
-f_out = 'type-error1.tok'
+f_out = f_in[:-2] + 'tok'
+f_out = './' + f_out.split('/')[-1]
 f_out = open(f_out, 'w')
 # read lines of input file
 with open(f_in) as f:
 	lines = f.readlines()
-
 	# iterate over each line
 	for line in lines:
 		line = line.strip()
 		# lexical tokens are separated by spaces
-		tokens = line.split(' ')
+		tokens = get_tokens(line)
 		# iterate over tokens in line
 		for token in tokens:
 			if token == '':
@@ -37,12 +42,8 @@ with open(f_in) as f:
 				if msg == 'token ignored':
 					continue
 				print("error returning from function process_token")
-				stop()
-
-
-
+				sys.exit()
 	f.close()
-
 f_out.close()
 
 
